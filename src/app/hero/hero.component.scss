@@ -1,0 +1,75 @@
+header {
+    background: linear-gradient(#0e276a, #1a3ea1);
+    width: 100vw;
+    height: 40vh;
+    position: relative;
+    
+    box-shadow: inset 0px -100px 100px -100px #07143d;
+}
+
+.background {
+    display: block;
+    width: calc(100vw + 500px);
+    height: 80vh;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.7;
+    rotate: 5deg;
+    animation: backgroundText 20s infinite linear;
+    background-image: url(../../assets/images/allstar.png);
+    background-size: 500px;
+}
+
+.background-container {
+    position: absolute;
+    width: 100vw;
+    height: 40vh;
+    overflow: hidden;
+}
+
+@keyframes backgroundText {
+    0% {
+        top: -100px;
+        left: 0px;
+    }
+
+    100% {
+        top: -144px;
+        left: -500px;
+    }
+}
+
+.harden {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 130%;
+    z-index: 3;
+    bottom: -30%;
+}
+
+.title-james {
+    z-index: 2;
+    position: absolute;
+    font-size: 6rem;
+    top: calc(50% - 2.9rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.title-hardle {
+    z-index: 2;
+    position: absolute;
+    font-size: 5.4rem;
+    top: calc(50% + 2.9rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.outlined {
+    z-index: 4;
+    -webkit-text-fill-color: transparent; 
+  -webkit-text-stroke: 1.5px white;
+}
