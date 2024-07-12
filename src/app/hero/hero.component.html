@@ -2,26 +2,24 @@
     <section [ngClass]="{'background-new': true, 'background-animation': changingGamemode}">
         <section ngClass="background-new-inner">
             <img ngClass="harden" src="../../assets/images/harden {{newGamemode}}.png">
-            <span ngClass="wall"></span>
+            <span ngClass="wall" style="background: url('../../assets/images/{{newGamemode}}.png'),  linear-gradient(#0000009f, #00000000); background-size: 400px;">
+                <section [ngClass]="{'james-hardle-text': true, 'james-hardle-text-animation': changingGamemode}">
+                    <h1 ngClass="outlined-james">JAMES</h1>
+                    <h1 ngClass="title-james">JAMES</h1>
+                    <h1 ngClass="title-hardle">HARDLE</h1>
+                    <h1 ngClass="outlined-hardle">HARDLE</h1>
+                </section>
+            </span>
             <span ngClass="floor"></span>
         </section>
     </section>
+       
 
-    <!--  <span ngClass="background-container">
-        <span #background ngClass="background"
-            style="background-image: url('../../assets/images/{{currentGamemode}}.png');"></span>
-        <section ngClass="james-hardle-text">
-            <h1 ngClass="outlined-james">JAMES</h1>
-            <h1 ngClass="title-james">JAMES</h1>
-            <h1 ngClass="title-hardle">HARDLE</h1>
-            <h1 ngClass="outlined-hardle">HARDLE</h1>
-        </section>
-    </span> -->
 
     <section ngClass="container">
         <input ngClass="dp-none" id="dropdown" #dropdown type="checkbox">
         <section ngClass="dropdown-container">
-            <label ngClass="dropdown" for="dropdown"> {{ newGamemode }} <img ngClass="dropdown-arrow"
+            <label [ngClass]="{'dropdown': true, 'dropdown-inactive': changingGamemode}" for="dropdown"> {{ newGamemode }} <img ngClass="dropdown-arrow"
                     src="../../assets/icons/arrow1.svg" alt=""></label>
             <section ngClass="dropdown-open-container">
                 <div ngClass="arrow-up"></div>
@@ -42,7 +40,14 @@
 
     <section ngClass="background-old">
         <img ngClass="harden" src="../../assets/images/harden {{currentGamemode}}.png">
-        <span ngClass="wall"></span>
+        <span ngClass="wall" style="background: url('../../assets/images/{{currentGamemode}}.png'),  linear-gradient(#0000009f, #00000000);  background-size: 400px;">
+            <section ngClass="james-hardle-text">
+                <h1 ngClass="outlined-james">JAMES</h1>
+                <h1 ngClass="title-james">JAMES</h1>
+                <h1 ngClass="title-hardle">HARDLE</h1>
+                <h1 ngClass="outlined-hardle">HARDLE</h1>
+            </section>
+        </span>
         <span ngClass="floor"></span>
     </section>
 

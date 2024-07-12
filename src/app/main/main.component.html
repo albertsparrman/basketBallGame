@@ -1,7 +1,6 @@
 
 <main>
-    <section ngClass="searchbar-container">
+    <section [ngClass]="['searchbar-container', 'container']">
         <input ngClass="searchbar" id="search" type="text" placeholder="Enter player name...">
-        <button ngClass="submit-button"><p>Submit guess</p></button>
     </section>
 </main>

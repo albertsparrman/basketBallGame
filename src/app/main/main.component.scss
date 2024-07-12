@@ -3,17 +3,13 @@ main {
     z-index: 3;
     border-top: #b91010 4px solid; 
     background-color: #f7f7f7;
-    width: 100vw;
-    padding: 20px 0px;
+   
 }
 
 .searchbar-container {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    width: fit-content;
-    box-shadow: 0px 6px 8px #18181830;
-    border-radius: 20px;
 }
 
 .searchbar {
@@ -21,32 +17,18 @@ main {
     background-repeat: no-repeat;
     background-size: 16px;
     background-position: center left 10px;
-    padding: 10px;
+    padding: 9px;
     padding-left: 34px;
-    border: none;
-    outline: none;
-    border-radius: 20px 0px 0px 20px;
+    width: 300px;
+    max-width: calc(100% - 20px);
+    border: 1.5px solid #dcdcdc;
+    border-radius: 20px;
     color: #181818;
+    transition: border 0.2s, box-shadow 0.2s;
 }
 
-.submit-button {
-    padding: 10px 14px;
-    border: none;
-    border-radius: 0px 20px 20px 0px; 
-    color: white;
-    background: linear-gradient(-45deg, #b91010, #fc2424);
-    transition: 0.3s;
-    outline: none;
-
-    p {
-        transition: 0.15s;
-    }
-}
-
-.submit-button:hover {
-    filter: brightness(0.84);
-}
-
-.submit-button:active p {
-    transform: scale(0.95);
+.searchbar:focus {
+    border: 2px solid #b91010;
+    box-shadow: 0px 0px 0px 1px #e79b9b;
+    outline: 0 none;
 }

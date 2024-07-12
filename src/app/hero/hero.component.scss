@@ -1,33 +1,11 @@
-header {
-    background: linear-gradient(#0e276a, #1a3ea1);
+header { 
     width: 100vw;
     height: 400px;
-    max-height: 40vh;
+    max-height: 35vh;
     position: relative;
     overflow: hidden;
+    background-color: #0c34a0;
 
-
-}
-
-
-
-.background {
-    display: block;
-    width: calc(100vw + 500px);
-    height: calc(100% + 400px);
-    position: absolute;
-    z-index: 1;
-    opacity: 0.7;
-    rotate: 5deg;
-    animation: backgroundText 20s infinite linear;
-    background-size: 500px;
-}
-
-.background-container {
-    position: absolute;
-    width: 100vw;
-    height: 82%;
-    overflow: hidden;
 }
 
 @keyframes backgroundText {
@@ -56,31 +34,43 @@ header {
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 65px;
-    z-index: 2;
-    top: calc(50% - 10px);
+    text-align: center;
+    gap: 0px;
+    font-size: 9vh;
+    z-index: 10;
+    top: calc(50% - 0.5vh);
     left: 50%;
     transform: translate(-50%, -50%);
-    line-height: 200%;
+    line-height: 100%;
+}
+
+.james-hardle-text-animation {
+    animation: textAnimation 1 2s 0.5s;
+}
+
+@keyframes textAnimation {
+    0% {
+        gap: 90px;
+    }
 }
 
 .title-james {
-    font-size: 96px;
+    font-size: 1em;
 }
 
 .title-hardle {
-    font-size: 86px;
+    font-size: 0.88em;
 }
 
 .outlined-james {
-    font-size: 96px;
+    font-size: 1em;
     color: transparent;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1.5px #c5c5c5;
 }
 
 .outlined-hardle {
-    font-size: 86px;
+    font-size: 0.88em;
     color: #c5c5c5;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1.5px #c5c5c5;
@@ -108,7 +98,7 @@ header {
 }
 
 .dropdown {
-    background-color: #0b1a43;
+    background-color: #00000069;
     color: white;
     font-family: "Antonio", sans-serif;
     line-height: 100%;
@@ -120,6 +110,12 @@ header {
     align-items: center;
     gap: 8px;
     font-size: 1.2rem;
+    transition: filter 0.2s;
+}
+
+.dropdown-inactive {
+    filter: brightness(0.5);
+    pointer-events: none;
 }
 
 .dropdown-arrow {
@@ -175,15 +171,11 @@ header {
 
 
 
-.background-old {
-    background-color: rgb(41, 41, 41);
-    z-index: 0;
-}
 
 
 .background-new {
     position: absolute;
-    background-color: rgb(41, 41, 41);
+    background-color: #000000;
     height: 100%;
     left: -30vw;
     width: 0vw;
@@ -209,10 +201,10 @@ header {
     width: 100vw;
     top: 0;
     height: 78%;
-    background-image: url(../../assets/images/grid.png);
-    background-size: 20px;
+
     position: absolute;
     z-index: 0;
+    overflow: hidden;
 }
 
 .floor {
@@ -229,6 +221,8 @@ header {
 
 @keyframes backgroundTransition {
     80% {
+
         width: 160vw;
+        background-color: #0c34a0;
     }
 }
