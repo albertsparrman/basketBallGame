@@ -1,14 +1,51 @@
-<span ngClass="background-container">
-    <span ngClass="background"></span>
-</span>
-
-
-
 <header>
-    <h1 [ngClass]="{'title-james': true, 'outlined': true}">JAMES</h1>
-    <h1 ngClass="title-james">JAMES</h1>
-    <img ngClass="harden" src="../../assets/images/harden2.png">
-    <h1 [ngClass]="{'title-hardle': true, 'outlined': true}">HARDLE</h1>
-    <h1 ngClass="title-hardle">HARDLE</h1>
-    <span></span>
+    <section [ngClass]="{'background-new': true, 'background-animation': changingGamemode}">
+        <section ngClass="background-new-inner">
+            <img ngClass="harden" src="../../assets/images/harden {{newGamemode}}.png">
+            <span ngClass="wall"></span>
+            <span ngClass="floor"></span>
+        </section>
+    </section>
+
+    <!--  <span ngClass="background-container">
+        <span #background ngClass="background"
+            style="background-image: url('../../assets/images/{{currentGamemode}}.png');"></span>
+        <section ngClass="james-hardle-text">
+            <h1 ngClass="outlined-james">JAMES</h1>
+            <h1 ngClass="title-james">JAMES</h1>
+            <h1 ngClass="title-hardle">HARDLE</h1>
+            <h1 ngClass="outlined-hardle">HARDLE</h1>
+        </section>
+    </span> -->
+
+    <section ngClass="container">
+        <input ngClass="dp-none" id="dropdown" #dropdown type="checkbox">
+        <section ngClass="dropdown-container">
+            <label ngClass="dropdown" for="dropdown"> {{ newGamemode }} <img ngClass="dropdown-arrow"
+                    src="../../assets/icons/arrow1.svg" alt=""></label>
+            <section ngClass="dropdown-open-container">
+                <div ngClass="arrow-up"></div>
+                <section ngClass="dropdown-open">
+                    <button ngClass="dropdown-item" (click)="changeGamemode('ALL PLAYERS')">
+                        All players
+                    </button>
+                    <button ngClass="dropdown-item" (click)="changeGamemode('STARTERS')">
+                        Starters
+                    </button>
+                    <button ngClass="dropdown-item" (click)="changeGamemode('ALL-STARS')">
+                        All-stars
+                    </button>
+                </section>
+            </section>
+        </section>
+    </section>
+
+    <section ngClass="background-old">
+        <img ngClass="harden" src="../../assets/images/harden {{currentGamemode}}.png">
+        <span ngClass="wall"></span>
+        <span ngClass="floor"></span>
+    </section>
+
+
+
 </header>

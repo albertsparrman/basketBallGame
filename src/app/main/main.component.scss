@@ -1,13 +1,13 @@
 main {
-    background: linear-gradient(#0e276a, #1a3ea1);
+    position: relative;
+    z-index: 3;
+    border-top: #b91010 4px solid; 
+    background-color: #f7f7f7;
     width: 100vw;
-    padding: 45px 0px;
-    text-align: center;
+    padding: 20px 0px;
 }
 
 .searchbar-container {
-    position: relative;
-    z-index: 5;
     display: flex;
     justify-content: center;
     margin: 0 auto;
