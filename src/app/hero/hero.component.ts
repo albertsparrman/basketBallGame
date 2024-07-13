@@ -24,7 +24,7 @@ export class HeroComponent {
 
       window.setTimeout(() => {
         this.delayCurrentGamemode()
-      }, 3000)
+      }, 2000)
     }
     if (this.dropdown != undefined) {
       this.dropdown.nativeElement.checked = false

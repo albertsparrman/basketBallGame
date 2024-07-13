@@ -1,13 +1,13 @@
-<header>
+<header [ngClass]="{'all-star-background': currentGamemode == 'ALL-STARS', 'all-players-background': currentGamemode == 'ALL PLAYERS', 'starters-background': currentGamemode == 'STARTERS'}">
     <section [ngClass]="{'background-new': true, 'background-animation': changingGamemode}">
-        <section ngClass="background-new-inner">
+        <section [ngClass]="{'background-new-inner': true, 'all-star-background': newGamemode == 'ALL-STARS', 'all-players-background': newGamemode == 'ALL PLAYERS', 'starters-background': newGamemode == 'STARTERS'}">
             <img ngClass="harden" src="../../assets/images/harden {{newGamemode}}.png">
-            <span ngClass="wall" style="background: url('../../assets/images/{{newGamemode}}.png'),  linear-gradient(#0000009f, #00000000); background-size: 400px;">
+            <span ngClass="wall" style="background: center / cover no-repeat url('../../assets/images/{{newGamemode}}.jpg');">
                 <section [ngClass]="{'james-hardle-text': true, 'james-hardle-text-animation': changingGamemode}">
-                    <h1 ngClass="outlined-james">JAMES</h1>
+                    <h1 [ngClass]="['outlined', 'title-james']">JAMES</h1>
                     <h1 ngClass="title-james">JAMES</h1>
                     <h1 ngClass="title-hardle">HARDLE</h1>
-                    <h1 ngClass="outlined-hardle">HARDLE</h1>
+                    <h1 [ngClass]="['outlined', 'title-hardle']">HARDLE</h1>
                 </section>
             </span>
             <span ngClass="floor"></span>
@@ -40,12 +40,12 @@
 
     <section ngClass="background-old">
         <img ngClass="harden" src="../../assets/images/harden {{currentGamemode}}.png">
-        <span ngClass="wall" style="background: url('../../assets/images/{{currentGamemode}}.png'),  linear-gradient(#0000009f, #00000000);  background-size: 400px;">
+        <span ngClass="wall" style="background: center / cover no-repeat url('../../assets/images/{{currentGamemode}}.jpg');">
             <section ngClass="james-hardle-text">
-                <h1 ngClass="outlined-james">JAMES</h1>
+                <h1 [ngClass]="['outlined', 'title-james']">JAMES</h1>
                 <h1 ngClass="title-james">JAMES</h1>
                 <h1 ngClass="title-hardle">HARDLE</h1>
-                <h1 ngClass="outlined-hardle">HARDLE</h1>
+                <h1 [ngClass]="['outlined', 'title-hardle']">HARDLE</h1>
             </section>
         </span>
         <span ngClass="floor"></span>

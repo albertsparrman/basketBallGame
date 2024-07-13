@@ -1,11 +1,22 @@
 header { 
     width: 100vw;
-    height: 400px;
+    height: 500px;
     max-height: 35vh;
     position: relative;
     overflow: hidden;
-    background-color: #0c34a0;
+    background: linear-gradient(90deg, #3e0a0a, #0e183b);
+}
 
+.all-star-background {
+    background: linear-gradient(90deg, #3e0a0a, #0e183b);
+}
+
+.all-players-background {
+    background: linear-gradient(90deg, #460c32, #4b2513, #493410, #11390e, #0d1752, #270f4e);
+}
+
+.starters-background {
+    background: linear-gradient(90deg, #0d0d0d, #360909);
 }
 
 @keyframes backgroundText {
@@ -30,13 +41,13 @@ header {
 }
 
 .james-hardle-text {
-    color: #c5c5c5;
+    color: #ffffffc2;
     position: absolute;
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 0px;
-    font-size: 9vh;
+    font-size: 8.2vh;
     z-index: 10;
     top: calc(50% - 0.5vh);
     left: 50%;
@@ -45,7 +56,7 @@ header {
 }
 
 .james-hardle-text-animation {
-    animation: textAnimation 1 2s 0.5s;
+    animation: textAnimation 1 1.5s;
 }
 
 @keyframes textAnimation {
@@ -62,20 +73,11 @@ header {
     font-size: 0.88em;
 }
 
-.outlined-james {
-    font-size: 1em;
+.outlined {
     color: transparent;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1.5px #c5c5c5;
+    -webkit-text-stroke: 1.2px  #ffffffc2;
 }
-
-.outlined-hardle {
-    font-size: 0.88em;
-    color: #c5c5c5;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1.5px #c5c5c5;
-}
-
 
 .arrow-up {
     margin-top: 10px;
@@ -98,7 +100,7 @@ header {
 }
 
 .dropdown {
-    background-color: #00000069;
+    background-color: #000000a9;
     color: white;
     font-family: "Antonio", sans-serif;
     line-height: 100%;
@@ -175,7 +177,6 @@ header {
 
 .background-new {
     position: absolute;
-    background-color: #000000;
     height: 100%;
     left: -30vw;
     width: 0vw;
@@ -185,7 +186,7 @@ header {
 }
 
 .background-animation {
-    animation: backgroundTransition 1 4s;
+    animation: backgroundTransition 1 3s;
 }
 
 .background-new-inner {
@@ -208,10 +209,10 @@ header {
 }
 
 .floor {
-    background: linear-gradient(#00000034, #0000005b);
-    width: 120vw;
+    background: linear-gradient(#ffffff0b, #00000024);
+    width: 100vw;
     height: 22%;
-    left: -10%;
+    left: 0;
     text-align: center;
     position: absolute;
     bottom: 0%;
@@ -221,8 +222,12 @@ header {
 
 @keyframes backgroundTransition {
     80% {
-
         width: 160vw;
-        background-color: #0c34a0;
+    }
+}
+
+@media (min-height: 1430px) {
+    .james-hardle-text {
+        font-size: 118px;
     }
 }
