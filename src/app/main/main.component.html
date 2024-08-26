@@ -1,6 +1,84 @@
+<app-popup [first_name]="localJson.players[correctPlayerId].first_name"
+    [last_name]=" localJson.players[correctPlayerId].last_name"
+    [player_image]="localJson.players[correctPlayerId].player_img_url"
+    [number]="localJson.players[correctPlayerId].number" [position]="localJson.players[correctPlayerId].position"
+    [team]="localJson.teams[localJson.players[correctPlayerId].team_id].city + ' ' + localJson.teams[localJson.players[correctPlayerId].team_id].name"
+    [team_logo]="localJson.teams[localJson.players[correctPlayerId].team_id].team_img_url"
+    [team_color]="localJson.teams[localJson.players[correctPlayerId].team_id].team_color"
+    [team_logo]="localJson.teams[localJson.players[correctPlayerId].team_id].team_img_url"
+    [team_accent]="localJson.teams[localJson.players[correctPlayerId].team_id].team_accent_color"
+    [showPopup]="gameOver"></app-popup>
+
 
 <main>
-    <section [ngClass]="['searchbar-container', 'container']">
-        <input ngClass="searchbar" id="search" type="text" placeholder="Enter player name...">
+    <section ngClass="main-inner">
+        <section>
+            <section ngClass="search">
+                <input ngClass="searchbar" type="text" placeholder="Enter player name..."
+                    (input)="searchForPlayer(search.value)" #search>
+                <section [ngClass]="{'search-results-container': true, 'search-result-show': showSearchResults}">
+                    <button ngClass="search-result" *ngFor="let searchId of searchPlayersId"
+                        (click)="guessPlayer(searchId)">
+                        {{ localJson.players[searchId].first_name }} {{ localJson.players[searchId].last_name }}
+                    </button>
+                </section>
+            </section>
+            <button>Show silhoutte</button>
+            <button>Show divisions</button>
+        </section>
+
+        <section ngClass="categories">
+            <p ngClass="player-name">Name</p>
+            <section ngClass="guess-result">
+                <section [ngClass]="{'category': true, 'correct': true}">
+                    <p>Team</p>
+                </section>
+                <section [ngClass]="{'category': true, 'correct': false}">
+                    <p>Conference</p>
+                </section>
+                <section [ngClass]="{'category': true, 'correct': false}">
+                    <p>Division</p>
+                </section>
+                <section [ngClass]="{'category': true, 'correct': false, 'close': true}">
+                    <p>Position</p>
+                </section>
+                <section [ngClass]="{'category': true, 'correct': false, 'close': true, 'under': false, 'over': false}">
+                    <p>Height</p>
+                </section>
+                <section [ngClass]="{'category': true, 'correct': false, 'close': false}">
+                    <p>Age</p>
+                </section>
+                <section
+                    [ngClass]="{'category': true, 'correct': false, 'close': false, 'under': false, 'over': false}">
+                    <p>Number</p>
+                </section>
+            </section>
+        </section>
+
+        <section *ngFor="let guess of guesses; index as guessNumber" ngClass="guess">
+            <app-player-guess *ngIf="guess != null" ngClass="guess"
+                [player]="localJson.players[guess].first_name + ' ' + localJson.players[guess].last_name"
+                [team]="localJson.teams[localJson.players[guess].team_id].abreviation"
+                [number]="localJson.players[guess].number" [position]="localJson.players[guess].position"
+                [conference]="localJson.teams[localJson.players[guess].team_id].conference"
+                [division]="localJson.teams[localJson.players[guess].team_id].division_short"
+                [age]="localJson.players[guess].age"
+                [height]="localJson.players[guess].height"
+                
+                [playerCorrect]="localJson.players[correctPlayerId].first_name + ' ' + localJson.players[correctPlayerId].last_name"
+                [teamCorrect]="localJson.teams[localJson.players[correctPlayerId].team_id].abreviation"
+                [numberCorrect]="localJson.players[correctPlayerId].number" [positionCorrect]="localJson.players[correctPlayerId].position"
+                [conferenceCorrect]="localJson.teams[localJson.players[correctPlayerId].team_id].conference"
+                [divisionCorrect]="localJson.teams[localJson.players[correctPlayerId].team_id].division_short"
+                [ageCorrect]="localJson.players[correctPlayerId].age"
+                [heightCorrect]="localJson.players[correctPlayerId].height"></app-player-guess>
+            <section *ngIf="guess == null" ngClass="guess-placeholder">
+                <p>Guess {{ guessNumber + 1 }}</p>
+            </section>
+        </section>
+
+
+        <button (click)="setGameOver()">Give up</button>
+        <button>Restart</button>
     </section>
 </main>

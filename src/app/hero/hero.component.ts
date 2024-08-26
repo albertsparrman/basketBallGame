@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { setTimeout } from 'node:timers/promises';
+
 
 @Component({
   selector: 'app-hero',

@@ -1,15 +1,29 @@
 main {
     position: relative;
-    z-index: 3;
-    border-top: #b91010 4px solid; 
-    background-color: #f7f7f7;
-   
+    z-index: 10;
+    border-top: #deb318 4px solid;
+    background-color: var(--color-bg);
 }
 
-.searchbar-container {
+.main-inner {
+    position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 1120px;
+    max-width: calc(100vw - 80px);
     margin: 0 auto;
+}
+
+.search {
+    position: relative;
+    width: 500px;
+    z-index: 10;
+}
+
+.guess {
+    width: 100%;
 }
 
 .searchbar {
@@ -19,16 +33,96 @@ main {
     background-position: center left 10px;
     padding: 9px;
     padding-left: 34px;
-    width: 300px;
-    max-width: calc(100% - 20px);
-    border: 1.5px solid #dcdcdc;
+    width: calc(100% - 46px);
+    border: 1.5px solid #c7c7c7;
     border-radius: 20px;
     color: #181818;
     transition: border 0.2s, box-shadow 0.2s;
 }
 
 .searchbar:focus {
-    border: 2px solid #b91010;
-    box-shadow: 0px 0px 0px 1px #e79b9b;
+    border: 1.5px solid #deb318;
+    box-shadow: 0px 0px 0px 1px #deb3187c;
     outline: 0 none;
+}
+
+.search-results-container {
+    position: absolute;
+    top: 54px;
+    opacity: 0;
+    background-color: var(--color-bg);
+    max-height: 200px;
+    padding: 3px;
+    pointer-events: none;
+    overflow: scroll;
+    width: calc(100% - 6px);
+    border-radius: 5px;
+    box-shadow: 0px 5px 7px #0000000b;
+}
+
+.search:focus-within .search-result-show {
+    transition: opacity 0.5s, top 0.5s;
+    pointer-events: auto;
+    top: 46px;
+    opacity: 1;
+}
+
+.search-result {
+    border-radius: 3px;
+    padding: 8px;
+    text-align: left;
+    border: none;
+    width: 100%;
+    background-color: var(--color-bg);
+    outline: none;
+}
+
+.search-result:hover,
+.search-result:focus {
+    filter: brightness(0.84);
+}
+
+
+.categories {
+    width: calc(100% - 12px);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    padding: 6px;
+}
+
+.guess-result {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+    width: calc(100% - 180px);
+}
+
+.guess-result-container p {
+    font-family: "Antonio", sans-serif;
+    font-weight: 500;
+}
+
+.player-name {
+    width: 180px;
+    text-align: center;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    width: 100%;
+}
+
+.guess-placeholder {
+    display: flex;
+    justify-content: center;
+    background-color: #eeeeee;
+    margin-bottom: 10px;
+    padding: 12.5px;
+    border-radius: 5px;
 }

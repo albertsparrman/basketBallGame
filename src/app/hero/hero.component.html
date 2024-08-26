@@ -1,8 +1,11 @@
-<header [ngClass]="{'all-star-background': currentGamemode == 'ALL-STARS', 'all-players-background': currentGamemode == 'ALL PLAYERS', 'starters-background': currentGamemode == 'STARTERS'}">
+<header
+    [ngClass]="{'all-star-background': currentGamemode == 'ALL-STARS', 'all-players-background': currentGamemode == 'ALL PLAYERS', 'starters-background': currentGamemode == 'STARTERS'}">
     <section [ngClass]="{'background-new': true, 'background-animation': changingGamemode}">
-        <section [ngClass]="{'background-new-inner': true, 'all-star-background': newGamemode == 'ALL-STARS', 'all-players-background': newGamemode == 'ALL PLAYERS', 'starters-background': newGamemode == 'STARTERS'}">
+        <section
+            [ngClass]="{'background-new-inner': true, 'all-star-background': newGamemode == 'ALL-STARS', 'all-players-background': newGamemode == 'ALL PLAYERS', 'starters-background': newGamemode == 'STARTERS'}">
             <img ngClass="harden" src="../../assets/images/harden {{newGamemode}}.png">
-            <span ngClass="wall" style="background: center / cover no-repeat url('../../assets/images/{{newGamemode}}.jpg');">
+            <span ngClass="wall"
+                style="background: center / cover no-repeat url('../../assets/images/{{newGamemode}}.png');">
                 <section [ngClass]="{'james-hardle-text': true, 'james-hardle-text-animation': changingGamemode}">
                     <h1 [ngClass]="['outlined', 'title-james']">JAMES</h1>
                     <h1 ngClass="title-james">JAMES</h1>
@@ -10,17 +13,20 @@
                     <h1 [ngClass]="['outlined', 'title-hardle']">HARDLE</h1>
                 </section>
             </span>
-            <span ngClass="floor"></span>
+            <span ngClass="floor">
+                <span ngClass="floor-inner"
+                    style="background: center / cover no-repeat url('../../assets/images/{{newGamemode}}.png');"></span>
+            </span>
         </section>
     </section>
-       
+
 
 
     <section ngClass="container">
         <input ngClass="dp-none" id="dropdown" #dropdown type="checkbox">
         <section ngClass="dropdown-container">
-            <label [ngClass]="{'dropdown': true, 'dropdown-inactive': changingGamemode}" for="dropdown"> {{ newGamemode }} <img ngClass="dropdown-arrow"
-                    src="../../assets/icons/arrow1.svg" alt=""></label>
+            <label [ngClass]="{'dropdown': true, 'dropdown-inactive': changingGamemode}" for="dropdown"> {{ newGamemode
+                }} <img ngClass="dropdown-arrow" src="../../assets/icons/arrow1.svg" alt=""></label>
             <section ngClass="dropdown-open-container">
                 <div ngClass="arrow-up"></div>
                 <section ngClass="dropdown-open">
@@ -36,11 +42,14 @@
                 </section>
             </section>
         </section>
+
+        <p ngClass="timer">00:00:00</p>
     </section>
 
     <section ngClass="background-old">
         <img ngClass="harden" src="../../assets/images/harden {{currentGamemode}}.png">
-        <span ngClass="wall" style="background: center / cover no-repeat url('../../assets/images/{{currentGamemode}}.jpg');">
+        <span ngClass="wall"
+            style="background: center / cover no-repeat url('../../assets/images/{{currentGamemode}}.png');">
             <section ngClass="james-hardle-text">
                 <h1 [ngClass]="['outlined', 'title-james']">JAMES</h1>
                 <h1 ngClass="title-james">JAMES</h1>
@@ -48,7 +57,10 @@
                 <h1 [ngClass]="['outlined', 'title-hardle']">HARDLE</h1>
             </section>
         </span>
-        <span ngClass="floor"></span>
+        <span ngClass="floor">
+            <span ngClass="floor-inner"
+                style="background: center / cover no-repeat url('../../assets/images/{{currentGamemode}}.png');"></span>
+        </span>
     </section>
 
 

@@ -1,0 +1,45 @@
+<span [ngClass]="{'popup-backdrop': true, 'hide-popup': !showPopup}"></span>
+
+<article [ngClass]="{'popup-container': true, 'hide-popup': !showPopup}">
+    <header ngClass="popup-header"
+        [ngStyle]="{'background': '#181818 linear-gradient(110deg, '+ team_accent +'1a, #ffffff00, '+ team_color +'1a)'}">
+        <img ngClass="logo" src="{{team_logo}}" alt="{{team}} logo">
+        <img ngClass="background" src="{{team_logo}}" alt="">
+        <span ngClass="background-grid"></span>
+        <section ngClass="player-header">
+            <img ngClass="player-image" src="{{player_image}}" alt="Image of {{first_name}} {{last_name}}">
+            <section ngClass="player-text">
+                <h3 ngClass="player-name">{{first_name}}</h3>
+                <h3 ngClass="player-name">{{last_name}}</h3>
+                <p ngClass="player-header-info">#{{number}} / {{team}} / {{position}}</p>
+            </section>
+        </section>
+    </header>
+    <span ngClass="player-info-container"
+        [ngStyle]="{'background': 'linear-gradient(90deg, ' + team_accent + ', ' + team_color + ')'}">
+    </span>
+    <section>
+        <section>
+            <h3 [ngClass]="{'victory': true, 'loss': false}">Victory</h3>
+            <p>Total guesses: 3</p>
+            <p>Time elapsed: 00:00:10</p>
+        </section>
+        <section>
+            <section ngClass="stars">
+                <img ngClass="star" src="../../assets/icons/star.svg" alt="">
+                <img ngClass="star" src="../../assets/icons/star.svg" alt="">
+                <img ngClass="star" src="../../assets/icons/star.svg" alt="">
+                <img ngClass="star" src="../../assets/icons/star.svg" alt="">
+                <img ngClass="star" src="../../assets/icons/star.svg" alt="">
+            </section>
+            <p>2000</p>
+            <span ngClass="points-bar-outer">
+                <span ngClass="points-bar-inner"></span>
+            </span>
+        </section>
+    </section>
+    <section>
+        <button>Play again</button>
+        <button>Leaderboard</button>
+    </section>
+</article>

@@ -1,0 +1,85 @@
+.guess-result-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    padding: 6px;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.guess-result {
+    display: flex;
+    justify-content: space-evenly;   
+    gap: 5px;
+    width: calc(100% - 180px);
+}
+
+.guess-result-container p {
+    font-family: "Antonio", sans-serif;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.player-name {
+    width: 180px;
+    text-align: center;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 6px;
+    background-color: #c6c6c6;
+    border-radius: 2px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.correct {
+    background-color: #25BD34;
+    color: #ffffff;
+}
+
+.close {
+    background-color: #e2b309;
+    color: #ffffff;
+}
+
+.over {
+    background-image: url(../../assets/icons/arrowBG.svg);
+    filter: opacity(0.5);
+    width: 26px;
+    height: 200%;
+    background-size: 26px;
+    position: absolute;
+    top: 0;
+    right: 4px;
+    animation: arrowAnimation 1s linear infinite;
+}
+
+.under {
+    background-image: url(../../assets/icons/arrowBG.svg);
+    filter: opacity(0.5);
+    transform: rotateX(180deg);
+    width: 26px;
+    height: 200%;
+    background-size: 26px;
+    position: absolute;
+    top: 0;
+    right: 4px;
+    animation: arrowAnimation 1s linear infinite reverse;
+}
+
+@keyframes arrowAnimation {
+    100% { top:-16px;}
+}
+
+
+@media screen {
+    
+}

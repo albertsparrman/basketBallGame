@@ -1,0 +1,141 @@
+.popup-backdrop {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000039;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    backdrop-filter: blur(3px);
+
+}
+
+.popup-container{
+    width: 650px;
+    max-width: 90vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000000;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--color-bg);
+    box-shadow: 0px 5px 14px #0000001e;
+    transition: opacity 0.5s linear;
+}
+
+.hide-popup {
+    pointer-events: none;
+    opacity: 0;
+}
+
+.top {
+    display: flex;
+}
+
+.popup-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    right: -20%;
+    transform: translate(-50%, -50%);
+    filter: blur(4px) opacity(0.05);
+}
+
+.background-grid {
+    background-image: url(../../assets/images/grid.svg);
+    background-size: 6%;
+    position: absolute;
+    top: 50%;
+    width: 110%;
+    height: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: opacity(0.2);
+}
+
+.logo {
+    width: 10%;
+    left: 15px;
+    top: 10px;
+    position: absolute;
+}
+
+.player-image {
+    width: 32%;
+    margin-top: 3%;
+}
+
+.player-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.player-text {
+    font-size: 20px;
+}
+
+.player-name {
+    font-family: "Antonio", sans-serif;
+    font-weight: 500;
+    color: white;
+    font-size: 2em;
+    line-height: 110%;
+}
+
+.player-header-info {
+    font-family: "Antonio", sans-serif;
+    font-weight: 500;
+    color: #ffffffa2;
+    font-size: 0.85em;
+    margin-top: 2px;
+}
+
+.player-info-container {
+    background: linear-gradient(-75deg, #ffffff00, #ffffff10, #ffffff33);
+    display: flex;
+    flex-direction: column;
+    height: 5px;
+}
+
+
+
+.points-bar-outer {
+    position: relative;
+    display: block;
+    width: 80%;
+    height: 8px;
+    background-color: #181818;
+    border-radius: 3px;
+    border: #181818 solid 2px;
+}
+
+.points-bar-inner {
+    display: block;
+    width: 80%;
+    height: 100%;
+    background-color: #efefef;
+}
+
+.victory {
+    font-family: "Antonio", sans-serif;
+    font-weight: 500;
+    font-size: 2em;
+    line-height: 110%;
+    transform: skewX(-10deg);
+}
+
+@media (prefers-color-scheme: dark) {
+    .points-bar-inner {
+        background-color: aqua;
+    }
+}

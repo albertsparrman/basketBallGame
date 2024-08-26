@@ -1,0 +1,29 @@
+<article ngClass="guess-result-container">
+    <p ngClass="player-name">{{ player }}</p>
+    <section ngClass="guess-result">
+        <section [ngClass]="{'category': true, 'correct': player == playerCorrect}">
+            <p>{{ team }}</p>
+        </section>
+        <section [ngClass]="{'category': true, 'correct': conference == conferenceCorrect}">
+            <p>{{ conference }}</p>
+        </section>
+        <section [ngClass]="{'category': true, 'correct': division == divisionCorrect}">
+            <p>{{ division }}</p>
+        </section>
+        <section [ngClass]="{'category': true, 'correct': position == positionCorrect, 'close': false}">
+            <p>{{ position }}</p>
+        </section>
+        <section [ngClass]="{'category': true, 'correct': height == heightCorrect, 'close': false}">
+            <p>{{ height.charAt(0) }}&#39;{{height.substring(1,2)}}&#39;&#39;</p>
+            <span [ngClass]="{'under': false, 'over': true}"></span>
+        </section>
+        <section [ngClass]="{'category': true, 'correct': age == ageCorrect, 'close': false}">
+            <p>{{ age }}</p>
+            <span [ngClass]="{'under': age > ageCorrect, 'over': age < ageCorrect}"></span>
+        </section>
+        <section [ngClass]="{'category': true, 'correct': number == numberCorrect, 'close': false}">
+            <p>{{ number }}</p>
+            <span [ngClass]="{'under': number > numberCorrect, 'over': number < numberCorrect}"></span>
+        </section>
+    </section>
+</article>
